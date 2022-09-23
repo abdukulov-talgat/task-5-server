@@ -1,4 +1,4 @@
-import {Sequelize} from "sequelize";
+import { Sequelize } from 'sequelize';
 
 const database = new Sequelize(
     process.env.DB_NAME || 'task5',
@@ -6,8 +6,9 @@ const database = new Sequelize(
     process.env.DB_PASSWORD || 'root',
     {
         host: process.env.DB_HOST || 'localhost',
-        dialect: 'postgres'
+        dialect: 'postgres',
+        ssl: true,
     }
 );
 
-export {database};
+export { database };
