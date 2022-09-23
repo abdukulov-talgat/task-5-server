@@ -43,6 +43,12 @@ const addMessageApi = (app: Express) => {
         });
     });
 
+    const interval = setInterval(function ping() {
+        webSocketServer.clients.forEach(function each(ws: WebSocket) {
+            ws.ping();
+        });
+    }, 30000);
+
     return server;
 };
 
