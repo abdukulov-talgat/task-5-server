@@ -5,7 +5,7 @@ import { initDatabase } from './models/repository';
 import { addMessageApi } from './services/messageApi';
 import path from 'path';
 
-const PORT = Number(process.env.SERVER_PORT) || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 const app = express();
 
 app.use(cors());
