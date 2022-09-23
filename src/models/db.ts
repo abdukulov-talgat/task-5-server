@@ -7,7 +7,12 @@ const database = new Sequelize(
     {
         host: process.env.DB_HOST || 'localhost',
         dialect: 'postgres',
-        ssl: true,
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            },
+        },
     }
 );
 
